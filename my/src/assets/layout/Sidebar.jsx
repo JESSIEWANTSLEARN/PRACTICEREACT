@@ -1,13 +1,59 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-export default function Sidebar() {
-  return (
-    <div className="sidebar">
-      <h3>Menu</h3>
+function Sidebar() {
+    return (
+        <aside className="sidebar">
 
-      <Link to="/Home">Home</Link>
-      <Link to="/Profile">Profile</Link>
-    </div>
-  );
+            <div className="sidebar-title">
+                MENU
+            </div>
+
+            <nav className="sidebar-nav">
+
+                <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                        isActive ? "sidebar-link active" : "sidebar-link"
+                    }
+                >
+                    <span>⌂</span>
+                    Dashboard
+                </NavLink>
+
+                <NavLink
+                    to="/profile"
+                    className={({ isActive }) =>
+                        isActive ? "sidebar-link active" : "sidebar-link"
+                    }
+                >
+                    <span>👤</span>
+                    Profile
+                </NavLink>
+
+                <NavLink
+                    to="/state"
+                    className={({ isActive }) =>
+                        isActive ? "sidebar-link active" : "sidebar-link"
+                    }
+                >
+                    <span>⚡</span>
+                    State
+                </NavLink>
+
+            </nav>
+
+            <div className="sidebar-bottom">
+                <div className="sidebar-help">
+                    <span>?</span>
+                    <div>
+                        <strong>Need Help?</strong>
+                        <p>React Practice</p>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+    );
 }
+
+export default Sidebar;
