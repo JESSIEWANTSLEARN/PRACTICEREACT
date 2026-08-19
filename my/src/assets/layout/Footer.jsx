@@ -1,59 +1,17 @@
-import { NavLink } from "react-router-dom";
-
-function Sidebar() {
+function Footer() {
     return (
-        <aside className="sidebar">
+        <footer className="footer">
 
-            <div className="sidebar-title">
-                MENU
-            </div>
+            <p>
+                © 2026 React Dashboard
+            </p>
 
-            <nav className="sidebar-nav">
+            <p>
+                Built with React
+            </p>
 
-                <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                        isActive ? "sidebar-link active" : "sidebar-link"
-                    }
-                >
-                    <span>⌂</span>
-                    Dashboard
-                </NavLink>
-
-                <NavLink
-                    to="/profile"
-                    className={({ isActive }) =>
-                        isActive ? "sidebar-link active" : "sidebar-link"
-                    }
-                >
-                    <span>👤</span>
-                    Profile
-                </NavLink>
-
-                <NavLink
-                    to="/state"
-                    className={({ isActive }) =>
-                        isActive ? "sidebar-link active" : "sidebar-link"
-                    }
-                >
-                    <span>⚡</span>
-                    State
-                </NavLink>
-
-            </nav>
-
-            <div className="sidebar-bottom">
-                <div className="sidebar-help">
-                    <span>?</span>
-                    <div>
-                        <strong>Need Help?</strong>
-                        <p>React Practice</p>
-                    </div>
-                </div>
-            </div>
-
-        </aside>
+        </footer>
     );
 }
 
-export default Sidebar;
+export default Footer;
