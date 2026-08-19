@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom";
+
 import NavBar from "./assets/layout/NavBar";
 import Sidebar from "./assets/layout/Sidebar";
 import Footer from "./assets/layout/Footer";
@@ -7,8 +9,9 @@ import Profile from "./pages/Profile";
 import State from "./pages/State";
 import Error from "./pages/Error";
 
-function App() {
+import "./App.css";
 
+function App() {
     return (
         <div className="app">
 
