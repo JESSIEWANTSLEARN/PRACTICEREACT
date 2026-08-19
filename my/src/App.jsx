@@ -8,6 +8,9 @@ import Home from "./assets/pages/Home";
 import Profile from "./assets/pages/Profile";
 import State from "./assets/pages/State";
 import Error from "./assets/pages/Error";
+import About from "./assets/pages/About";
+import Services from "./assets/pages/Services";
+import Contact from "./assets/pages/Contact";
 
 import "./App.css";
 function App() {
