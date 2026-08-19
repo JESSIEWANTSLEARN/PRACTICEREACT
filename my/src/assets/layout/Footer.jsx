@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="footer">
-      <p>React Activity 2026</p>
+      <p>© 2026 My React App</p>
     </footer>
   );
 }

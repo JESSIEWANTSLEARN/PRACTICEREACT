@@ -1,23 +1,22 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import "./App.css";
 
-import Navbar from "./components/Navbar.jsx";
-import Sidebar from "./components/Sidebar.jsx";
-import Footer from "./components/Footer.jsx";
-
+import NavBar from "./assets/layout/NavBar.jsx";
+import Sidebar from "./assets/layout/Sidebar.jsx";
+import Footer from "./assets/layout/Footer.jsx";
 export default function App() {
   return (
-    <div>
+    <div className="app">
 
-      <Navbar />
+      <NavBar />
 
-      <div className="page-container">
+      <div className="main-container">
 
         <Sidebar />
 
-        <main className="content">
-          <Outlet />
-        </main>
+        <div className="content">
+          <h1>Content</h1>
+        </div>
 
       </div>
 
