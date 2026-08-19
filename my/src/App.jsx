@@ -4,13 +4,12 @@ import NavBar from "./assets/layout/NavBar";
 import Sidebar from "./assets/layout/Sidebar";
 import Footer from "./assets/layout/Footer";
 
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import State from "./pages/State";
-import Error from "./pages/Error";
+import Home from "./assets/pages/Home";
+import Profile from "./assets/pages/Profile";
+import State from "./assets/pages/State";
+import Error from "./assets/pages/Error";
 
 import "./App.css";
-
 function App() {
     return (
         <div className="app">
