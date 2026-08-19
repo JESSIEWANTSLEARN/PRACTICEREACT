@@ -59,7 +59,7 @@ function Profile() {
 
                         <div className="detail-item">
                             <span>Year Level</span>
-                            <strong>2nd Year</strong>
+                            <strong>3rd Year</strong>
                         </div>
 
                         <div className="detail-item">
