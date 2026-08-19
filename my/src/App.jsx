@@ -1,27 +1,61 @@
-import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+import NavBar from "./assets/layout/NavBar";
+import Sidebar from "./assets/layout/Sidebar";
+import Footer from "./assets/layout/Footer";
+
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import State from "./pages/State";
+import Error from "./pages/Error";
+
 import "./App.css";
 
-import NavBar from "./assets/layout/NavBar.jsx";
-import Sidebar from "./assets/layout/Sidebar.jsx";
-import Footer from "./assets/layout/Footer.jsx";
-export default function App() {
-  return (
-    <div className="app">
+function App() {
 
-      <NavBar />
+    return (
+        <div className="app">
 
-      <div className="main-container">
+            <NavBar />
 
-        <Sidebar />
+            <div className="app-body">
 
-        <div className="content">
-          <h1>Content</h1>
+                <Sidebar />
+
+                <main className="main-content">
+
+                    <Routes>
+
+                        <Route
+                            path="/"
+                            element={<Home />}
+                        />
+
+                        <Route
+                            path="/profile"
+                            element={<Profile />}
+                        />
+
+                        <Route
+                            path="/state"
+                            element={<State />}
+                        />
+
+                        <Route
+                            path="*"
+                            element={<Error />}
+                        />
+
+                    </Routes>
+
+                </main>
+
+            </div>
+
+            <Footer />
+
         </div>
-
-      </div>
-
-      <Footer />
-
-    </div>
-  );
+    );
 }
+
+export default App;
