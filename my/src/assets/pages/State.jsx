@@ -1,6 +1,23 @@
-// State.jsx
+import { useState } from "react";
+
 function State() {
-    return <h1>State</h1>;
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <h1>React State</h1>
+
+            <h2>Count: {count}</h2>
+
+            <button onClick={() => setCount(count + 1)}>
+                Add
+            </button>
+
+            <button onClick={() => setCount(count - 1)}>
+                Minus
+            </button>
+        </div>
+    );
 }
 
 export default State;
