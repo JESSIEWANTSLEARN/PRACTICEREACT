@@ -1,31 +1,48 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 function NavBar() {
     return (
-        <nav className="top-navbar">
+        <nav className="navbar">
+            <div className="navbar-links">
 
-            <div className="navbar-brand">
-                <div className="brand-icon">R</div>
+                <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                        isActive ? "nav-link active" : "nav-link"
+                    }
+                >
+                    Home
+                </NavLink>
 
-                <div>
-                    <h2>React Dashboard</h2>
-                    <span>State & Routing Practice</span>
-                </div>
+                <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                        isActive ? "nav-link active" : "nav-link"
+                    }
+                >
+                    About
+                </NavLink>
+
+                <NavLink
+                    to="/services"
+                    className={({ isActive }) =>
+                        isActive ? "nav-link active" : "nav-link"
+                    }
+                >
+                    Services
+                </NavLink>
+
+                <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                        isActive ? "nav-link active" : "nav-link"
+                    }
+                >
+                    Contact
+                </NavLink>
+
             </div>
-
-            <div className="navbar-actions">
-                <span className="notification">🔔</span>
-
-                <Link to="/profile" className="user-profile">
-                    <div className="user-avatar">JP</div>
-
-                    <div className="user-info">
-                        <strong>John</strong>
-                        <span>Student</span>
-                    </div>
-                </Link>
-            </div>
-
         </nav>
     );
 }
