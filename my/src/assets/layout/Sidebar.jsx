@@ -1,59 +1,56 @@
 import { NavLink } from "react-router-dom";
+
 import "./Sidebar.css";
+
 function Sidebar() {
-    return (
-        <aside className="sidebar">
+  return (
+    <aside className="sidebar">
+      <div>
+        <p className="sidebar-title">MENU</p>
 
-            <div className="sidebar-title">
-                MENU
-            </div>
+        <nav className="sidebar-navigation">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link sidebar-active" : "sidebar-link"
+            }
+          >
+            <span>⌂</span>
+            Dashboard
+          </NavLink>
 
-            <nav className="sidebar-nav">
+          <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link sidebar-active" : "sidebar-link"
+            }
+          >
+            <span>👤</span>
+            Profile
+          </NavLink>
 
-                <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                        isActive ? "sidebar-link active" : "sidebar-link"
-                    }
-                >
-                    <span>⌂</span>
-                    Dashboard
-                </NavLink>
+          <NavLink
+            to="/state"
+            className={({ isActive }) =>
+              isActive ? "sidebar-link sidebar-active" : "sidebar-link"
+            }
+          >
+            <span>⚡</span>
+            State
+          </NavLink>
+        </nav>
+      </div>
 
-                <NavLink
-                    to="/profile"
-                    className={({ isActive }) =>
-                        isActive ? "sidebar-link active" : "sidebar-link"
-                    }
-                >
-                    <span>👤</span>
-                    Profile
-                </NavLink>
+      <div className="sidebar-help">
+        <div className="help-icon">?</div>
 
-                <NavLink
-                    to="/state"
-                    className={({ isActive }) =>
-                        isActive ? "sidebar-link active" : "sidebar-link"
-                    }
-                >
-                    <span>⚡</span>
-                    State
-                </NavLink>
-
-            </nav>
-
-            <div className="sidebar-bottom">
-                <div className="sidebar-help">
-                    <span>?</span>
-                    <div>
-                        <strong>Need Help?</strong>
-                        <p>React Practice</p>
-                    </div>
-                </div>
-            </div>
-
-        </aside>
-    );
+        <div>
+          <strong>Need Help?</strong>
+          <p>React Practice</p>
+        </div>
+      </div>
+    </aside>
+  );
 }
 
 export default Sidebar;
