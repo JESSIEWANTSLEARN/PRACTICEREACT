@@ -322,3 +322,24 @@
     }
 
 }
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.page-heading h1 {
+    margin-bottom: 5px;
+}
+
+.page-heading p {
+    color: #6b7280;
+}
