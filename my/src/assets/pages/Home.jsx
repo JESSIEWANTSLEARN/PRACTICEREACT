@@ -1,89 +1,56 @@
+import { useEffect, useState } from "react";
+
+import ProductCard from "../Components/ProductCard";
+
 import "./Pages.css";
 
 function Home() {
-    return (
-        <div className="page">
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-            <div className="page-heading">
-                <h1>Dashboard</h1>
-                <p>Welcome back! Here is your React practice overview.</p>
-            </div>
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products?limit=6")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error();
+        }
 
-            <div className="dashboard-grid">
+        return response.json();
+      })
 
-                <div className="info-card">
-                    <div className="info-icon">📄</div>
+      .then((data) => {
+        setProducts(data);
+      })
 
-                    <div>
-                        <p>Total Pages</p>
-                        <h2>4</h2>
-                    </div>
-                </div>
+      .catch(() => {
+        setError("Failed to load products.");
+      })
 
-                <div className="info-card">
-                    <div className="info-icon">🔗</div>
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
-                    <div>
-                        <p>Routes</p>
-                        <h2>4</h2>
-                    </div>
-                </div>
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
-                <div className="info-card">
-                    <div className="info-icon">⚛</div>
+  if (error) {
+    return <p>{error}</p>;
+  }
 
-                    <div>
-                        <p>Framework</p>
-                        <h2>React</h2>
-                    </div>
-                </div>
+  return (
+    <div className="page">
+      <h1>Product Catalog</h1>
 
-            </div>
-
-            <div className="content-card">
-
-                <h2>Welcome to React Dashboard</h2>
-
-                <p>
-                    This project demonstrates reusable components,
-                    React Router navigation, and React State.
-                </p>
-
-                <div className="feature-list">
-
-                    <div className="feature">
-                        <span>✓</span>
-
-                        <div>
-                            <strong>React Router</strong>
-                            <p>Navigate between pages without refreshing.</p>
-                        </div>
-                    </div>
-
-                    <div className="feature">
-                        <span>✓</span>
-
-                        <div>
-                            <strong>Reusable Components</strong>
-                            <p>Navbar, Sidebar and Footer are shared by every page.</p>
-                        </div>
-                    </div>
-
-                    <div className="feature">
-                        <span>✓</span>
-
-                        <div>
-                            <strong>React State</strong>
-                            <p>State can dynamically update information on the page.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    );
+      <div className="product-grid">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Home;
